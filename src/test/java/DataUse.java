@@ -1,12 +1,12 @@
 import com.github.javafaker.Faker;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
-
 import static com.codeborne.selenide.Selenide.$;
 
 public class DataUse {
@@ -42,9 +42,9 @@ public class DataUse {
         $("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
     }
     public static String getNewDate(){
-        LocalDate today = LocalDate.now().plusDays(10);
+        LocalDate todayNew = LocalDate.now().plusDays(10);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String dayToMeet = today.format(formatter);
-        return dayToMeet;
+        String dayNew = todayNew.format(formatter);
+        return dayNew;
     }
 }

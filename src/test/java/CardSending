@@ -12,7 +12,7 @@ public class CardSending {
     @Test
     @DisplayName("Должен все заполнять и проходить успешно")
     void requestToDeliveryCard() {
- //       open("http://localhost:9999");
+        open("http://localhost:9999");
 //        $("[placeholder ='Город']").setValue(DataUse.getCity());
 //        DataUse.cleanUp();
 //        $("[placeholder='Дата встречи']").setValue(DataUse.getFormattedFutureDate());
