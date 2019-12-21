@@ -8,6 +8,10 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+
 repositories {
     mavenCentral()
 }
@@ -22,5 +26,3 @@ test {
     // в тестах, вызывая `gradlew test -Dselenide.headless=true` будем передавать этот параметр в JVM (где его подтянет Selenide)
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
 }
-compileJava.options.encoding = "UTF-8"
-compileTestJava.options.encoding = "UTF-8"
