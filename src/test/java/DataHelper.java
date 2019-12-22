@@ -6,16 +6,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import static com.codeborne.selenide.Selenide.$;
 
-public class DataUse {
+public class DataHelper {
     private static Faker faker = new Faker(new Locale("ru"));
     private static String firstName = faker.name().firstName();
     private static String lastName = faker.name().lastName();
     private static String phone = faker.phoneNumber().cellPhone();
     private static String city = faker.address().cityName();
 
-    public static Faker getFaker() {
-        return faker;
-    }
 
     public static String getName() {
         return firstName+lastName;
@@ -32,8 +29,7 @@ public class DataUse {
     public static String getFormattedFutureDate (){
         LocalDate today = LocalDate.now().plusDays(3);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String dayToMeet = today.format(formatter);
-        return dayToMeet;
+        return today.format(formatter);
     }
     public static void cleanUp(){
         $("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -41,7 +37,6 @@ public class DataUse {
     public static String getNewDate(){
         LocalDate todayNew = LocalDate.now().plusDays(10);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String dayNew = todayNew.format(formatter);
-        return dayNew;
+        return todayNew.format(formatter);
     }
 }
